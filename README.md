@@ -7,9 +7,9 @@ This application will show exchange rates for IND and EURO considering USD as ba
     b. cd exchanger 
     c. Follow step given at
 	   https://symfony.com/doc/current/setup.html#setting-up-an-existing-symfony-project
-
+    
 2. Configurations and migrations
-
+   * Update DB configs in DATABASE_URL property in .env
 	a.Create a new DB
 
 	  php bin/console doctrine:database:create
