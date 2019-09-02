@@ -9,7 +9,8 @@ This application will show exchange rates for IND and EURO considering USD as ba
 	   https://symfony.com/doc/current/setup.html#setting-up-an-existing-symfony-project
     
 2. Configurations and migrations
-   * Update DB configs in DATABASE_URL property in .env
+     * Update DB configs in DATABASE_URL property in .env
+   
 	a.Create a new DB
 
 	  php bin/console doctrine:database:create
