@@ -1,0 +1,28 @@
+html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+    }
+.title {
+    font-size: 50px;
+    text-align:center
+}
+#dialog {
+        display:none
+}
+#result-container {
+        display:none
+}
+.widget {
+        display:none
+        border: 2px solid black
+        width: 10%
+        height: 10%
+}
+.data-row {
+    text-align:center
+}
+

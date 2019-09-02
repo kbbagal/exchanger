@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Exchange Rates{% endblock %}
+
+{% block body %}
+    <i class="fa fa-plus fa-3" aria-hidden="true" id='add-exchg-rate' style='cursor:pointer;float:right;padding-right:5%;padding-top:5%' title='Click to add new'></i>
+    <br/>
+    <div class='title'>Exchange Rates</div>
+    <input type='hidden' id='user-action' value='{{ action }}' />
+    <table id="exchange-rates-data" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>Exchange Rate</th>
+                <th>Created On</th>
+                <th>Last updated On</th>
+                {% if action == 'edit' %}
+                    <th>Action</th>
+                {% endif %}
+            </tr>
+        </thead>
+    </table>
+    
+    <div id='save-exchange-form' style='display:none' title="Add exchange rate">
+        <div><lable style="padding-right:24px;">Base Currency : {{ base_currency }}</lable></div><br/>
+        <div>
+            <lable style="padding-right:24px;">Currency :</lable>
+            <select id='currency' style="width:171px;">
+                <option value=''>-- Select --</option>
+                {% for currency in available_currencies%}
+                    <option value='{{ currency }}'>{{ currency }}</option>
+                {% endfor %}
+            </select></div><br/>
+        <div><lable style="padding-right:58px;">Exchange Rate:</lable><input type='text' id='exchg-rate' style="width:170px;"></div><br/>
+        <div><input type='button' id='save-exchg-rate' value='Save'/></div>
+    </div>
+    <button onclick="window.history.back()" style='float:right;margin-right:5%;margin-top: 1%;
+'>Back</button>            
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('js/exchange-rates.js') }}"></script>
+    <script src="{{ asset('js/exchange-rates-management.js') }}"></script>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href = " {{ asset('css/style.css')}} ">
+{% endblock %}

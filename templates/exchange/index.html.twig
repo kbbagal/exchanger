@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Exchange Rates{% endblock %}
+
+{% block stylesheets %}
+    <link rel='stylesheet' href = " {{ asset('css/style.css')}} ">
+{% endblock %}
+
+{% block body %}
+    <div class='title'>Welcome to Exchanger!</div>
+    <div style='width:400px;height:400px;margin-left:37%;margin-top:6%'>
+        <span style='float:left;padding-left:5%'><a href='{{ path('displayRatesDashboard') }}'>View exchange rates</a></span>
+        <span style='float:right'><a href='{{ path('displayRatesDashboard', {action: "edit"}) }}'>Edit exchange rates</a></span>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="{{ asset('js/exchange-rates.js') }}"></script>
+{% endblock %}
